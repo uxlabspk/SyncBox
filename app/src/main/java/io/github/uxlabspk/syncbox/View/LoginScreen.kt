@@ -85,6 +85,8 @@ fun LoginScreen(navController: NavController) {
                 .fillMaxWidth()
                 .height(48.dp)) {
                 /* Perform Login Here */
+
+                navController.navigate("DashboardScreen")
             }
 
             Text(
