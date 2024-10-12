@@ -43,7 +43,7 @@ fun IntroScreen(navController: NavController) {
             fontSize = 32.sp)
         Text(text = "An all in one app to manage your todo's and meets in one place.", Modifier.padding(vertical = 10.dp), fontFamily = SF_Font_Family, fontWeight = FontWeight.Medium ,fontSize = 16.sp, textAlign = TextAlign.Center)
         PrimaryButton(text = "Get Started", modifier = Modifier.padding(top = 30.dp)) {
-            navController.navigate("LoginScreen")
+            navController.navigate("AccountScreen")
         }
     }
 }

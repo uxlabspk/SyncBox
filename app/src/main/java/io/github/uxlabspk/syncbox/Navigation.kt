@@ -5,8 +5,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import io.github.uxlabspk.syncbox.View.AccountScreen
 import io.github.uxlabspk.syncbox.View.IntroScreen
 import io.github.uxlabspk.syncbox.View.LoginScreen
+import io.github.uxlabspk.syncbox.View.SignUpScreen
 
 @Composable
 fun SyncBoxNavHost (navController: NavHostController = rememberNavController()) {
@@ -17,8 +19,16 @@ fun SyncBoxNavHost (navController: NavHostController = rememberNavController()) 
             IntroScreen(navController)
         }
 
+        composable("AccountScreen") {
+            AccountScreen(navController)
+        }
+
         composable("LoginScreen") {
             LoginScreen(navController)
+        }
+
+        composable("SignUpScreen") {
+            SignUpScreen(navController)
         }
     }
 }
