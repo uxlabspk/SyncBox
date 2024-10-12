@@ -6,6 +6,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -50,20 +51,22 @@ fun LoginScreen(navController: NavController) {
             navController.navigateUp()
         }
         Column(
-            modifier = Modifier.padding(horizontal = 20.dp)
+            modifier = Modifier.padding(horizontal = 20.dp).fillMaxHeight(), verticalArrangement = Arrangement.Center
         ) {
             Image(painter = painterResource(id = R.drawable.img_signin_screen), contentDescription = "sign in screen illustration", modifier = Modifier.align(Alignment.CenterHorizontally))
 
             InputField(
                 inputState = emailState,
                 onValueChange = { emailState = it},
-                textFieldType = TextFieldType.Email
+                textFieldType = TextFieldType.Email,
+                modifier = Modifier.padding(vertical = 5.dp)
             )
 
             InputField(
                 inputState = passwordState,
                 onValueChange = { passwordState = it},
-                textFieldType = TextFieldType.Password
+                textFieldType = TextFieldType.Password,
+                modifier = Modifier.padding(vertical = 5.dp)
             )
 
             Text(
@@ -92,7 +95,7 @@ fun LoginScreen(navController: NavController) {
             Text(
                 text = "Don't have an account? Create new",
                 modifier = Modifier
-                    .padding(vertical = 10.dp)
+                    .padding(top = 20.dp)
                     .fillMaxWidth()
                     .clickable {
                         navController.navigate("SignUpScreen")

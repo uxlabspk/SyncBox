@@ -3,7 +3,9 @@ package io.github.uxlabspk.syncbox.View
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -48,7 +50,7 @@ fun SignUpScreen(navController: NavController) {
             navController.navigateUp()
         }
         Column(
-            modifier = Modifier.padding(horizontal = 20.dp)
+            modifier = Modifier.padding(horizontal = 20.dp).fillMaxHeight(), verticalArrangement = Arrangement.Center
         ) {
             Image(
                 painter = painterResource(id = R.drawable.img_signup_screen),
@@ -60,25 +62,28 @@ fun SignUpScreen(navController: NavController) {
             InputField(
                 inputState = nameState,
                 onValueChange = { nameState = it },
-                textFieldType = TextFieldType.Text
+                textFieldType = TextFieldType.Text,
+                modifier = Modifier.padding(vertical = 5.dp)
             )
 
             InputField(
                 inputState = emailState,
                 onValueChange = { emailState = it },
-                textFieldType = TextFieldType.Email
+                textFieldType = TextFieldType.Email,
+                modifier = Modifier.padding(vertical = 5.dp)
             )
 
             InputField(
                 inputState = passwordState,
                 onValueChange = { passwordState = it },
                 textFieldType = TextFieldType.Password,
-                modifier = Modifier.padding(bottom = 10.dp)
+                modifier = Modifier.padding(bottom = 5.dp)
             )
 
             PrimaryButton(
                 text = "Sign Up", modifier = Modifier
                     .fillMaxWidth()
+                    .padding(vertical = 10.dp)
                     .height(48.dp)
             ) {
                 /* Perform Login Here */
@@ -87,7 +92,7 @@ fun SignUpScreen(navController: NavController) {
             Text(
                 text = "Already have an account? Login",
                 modifier = Modifier
-                    .padding(vertical = 10.dp)
+                    .padding(top = 10.dp)
                     .fillMaxWidth()
                     .clickable {
                         navController.navigate("LoginScreen")

@@ -16,7 +16,7 @@ import io.github.uxlabspk.syncbox.View.TodoScreen
 
 @Composable
 fun SyncBoxNavHost (navController: NavHostController = rememberNavController()) {
-    val startScreen = "IntroScreen"
+    val startScreen = "DashboardScreen"// "IntroScreen"
 
     NavHost(navController = navController, startDestination = startScreen) {
         composable("IntroScreen") {
