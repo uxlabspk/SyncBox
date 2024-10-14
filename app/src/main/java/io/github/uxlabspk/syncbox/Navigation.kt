@@ -12,6 +12,7 @@ import io.github.uxlabspk.syncbox.View.LoginScreen
 import io.github.uxlabspk.syncbox.View.MeetingsScreen
 import io.github.uxlabspk.syncbox.View.ProfileScreen
 import io.github.uxlabspk.syncbox.View.SignUpScreen
+import io.github.uxlabspk.syncbox.View.TaskDetailScreen
 import io.github.uxlabspk.syncbox.View.TodoScreen
 
 @Composable
@@ -38,5 +39,9 @@ fun SyncBoxNavHost (navController: NavHostController = rememberNavController()) 
         composable("DashboardScreen") {
             DashboardScreen(navController)
         }
+
+//        composable("") {
+//            TaskDetailScreen(navController)
+//        }
     }
 }
